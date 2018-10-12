@@ -1,7 +1,0 @@
-{
-  "timestamp": "2018-09-23T21:30:31.134+0000",
-  "status": 400,
-  "error": "Bad Request",
-  "message": "Required UserDTO parameter 'userDTO' is not present",
-  "path": "/user/createUser"
-}

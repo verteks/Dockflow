@@ -1,20 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="FUSUsageTrigger">
-    <session id="-1537428997">
-      <usages-collector id="statistics.spring.boot.mvc.usages">
-        <counts>
-          <entry key="RestClientRequestEditorNavigator.fromCode" value="2" />
-          <entry key="RestClientRequestRunnerNavigator.fromCode" value="1" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/../demo/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
