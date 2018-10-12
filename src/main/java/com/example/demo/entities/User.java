@@ -1,38 +1,52 @@
 package com.example.demo.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.util.UUID;
+
+
+//пользователи, которых заводит админ. логин, пароль, бизнес-роль
 
 @Entity
-public class User {
-    public User(){}
+public class User extends Human {
 
-    public User(String name, String password){
-    this.name = name;
-    this.password=password;
+    public User(){
+
+    }
+
+    public User(String login, String password, @NotNull String name, @NotNull UserType userType) {
+        super(login, password);
+        this.name = name;
+        this.userType = userType;
     }
 
     @Id
     @GeneratedValue
     @NotNull
-    UUID id;
+    private Long id;
 
+    @Column
     @NotNull
-    String name;
+    private String name;
 
-    @NotNull
-    String password;
+    @ManyToOne
+    private CustomFlow custompath;
 
-    public UUID getId() {
-        return id;
+    @ManyToOne
+    private Document document;
+
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @PrimaryKeyJoinColumn
+    private UserType userType;
+
+    public UserType getUserType() {
+        return userType;
     }
 
-    public void setId(UUID id) {
-        this.id = id;
+    public void setUserType(UserType userType) {
+        this.userType = userType;
     }
+
 
     public String getName() {
         return name;
@@ -40,13 +54,5 @@ public class User {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 }
