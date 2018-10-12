@@ -1,6 +1,9 @@
 package com.example.demo.entities;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public enum StatusDoc {
@@ -19,4 +22,8 @@ public enum StatusDoc {
     public String getStatusDoc(){
         return StatusDoc;
     }
+    @Id
+    @GeneratedValue
+    @NotNull
+    private Long id;
 }

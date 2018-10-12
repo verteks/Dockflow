@@ -12,9 +12,11 @@ public class CustomFlow {
 
     }
 
-    public CustomFlow(AbstractFlow templateFlow, List<User> customPath) {
+
+    public CustomFlow(AbstractFlow templateFlow, List<User> customPath, List<Document> documents) {
         this.templateFlow = templateFlow;
         this.customPath = customPath;
+        Documents = documents;
     }
 
     @Id
@@ -23,7 +25,10 @@ public class CustomFlow {
     private Long id;
 
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "customflow", cascade = CascadeType.ALL)
+
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @PrimaryKeyJoinColumn
     private AbstractFlow templateFlow;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "custompath", cascade = CascadeType.ALL)

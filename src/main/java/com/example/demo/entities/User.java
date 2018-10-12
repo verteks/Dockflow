@@ -34,8 +34,9 @@ public class User extends Human {
     @ManyToOne
     private Document document;
 
-    @Column
-    @NotNull
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @PrimaryKeyJoinColumn
     private UserType userType;
 
     public UserType getUserType() {

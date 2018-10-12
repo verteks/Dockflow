@@ -1,6 +1,7 @@
 package com.example.demo.entities;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
@@ -16,10 +17,7 @@ public class Human {
         this.password = password;
     }
 
-    @Id
-    @GeneratedValue
-    @NotNull
-    private Long id;
+
 
     @Column
     @NotNull
@@ -29,9 +27,7 @@ public class Human {
     @NotNull
     private String password;
 
-    public Long getId() {
-        return id;
-    }
+
 
 
 

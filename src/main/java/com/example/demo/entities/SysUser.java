@@ -3,6 +3,7 @@ package com.example.demo.entities;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
+
 @Entity
 public class SysUser extends Human {
     public SysUser(){
@@ -14,6 +15,11 @@ public class SysUser extends Human {
         super(login, password);
         this.role = role;
     }
+
+    @Id
+    @GeneratedValue
+    @NotNull
+    private Long id;
 
     @Column
     @NotNull

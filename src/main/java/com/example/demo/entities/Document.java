@@ -3,7 +3,9 @@ package com.example.demo.entities;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.io.File;
+import java.util.List;
 
+@Entity
 public class Document {
 
     public Document(){
@@ -37,11 +39,11 @@ public class Document {
         this.file = file;
     }
 
-    public User getState() {
+    public List<User> getState() {
         return State;
     }
 
-    public void setState(User state) {
+    public void setState(List<User> state) {
         State = state;
     }
 
@@ -78,7 +80,7 @@ public class Document {
     }
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "document", cascade = CascadeType.ALL)
-    private User State;
+    private List<User> State;
 
 
 
