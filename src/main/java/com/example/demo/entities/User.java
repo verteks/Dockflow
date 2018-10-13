@@ -19,11 +19,6 @@ public class User extends Human {
         this.userType = userType;
     }
 
-    @Id
-    @GeneratedValue
-    @NotNull
-    private Long id;
-
     @Column
     @NotNull
     private String name;

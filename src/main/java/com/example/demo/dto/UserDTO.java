@@ -1,7 +1,10 @@
 package com.example.demo.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class UserDTO {
     private String name;
+
     private String password;
 
     public String getName() {

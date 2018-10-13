@@ -1,6 +1,7 @@
 package com.example.demo.dto;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class IdDTO {
     private Long id;

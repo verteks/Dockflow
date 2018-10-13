@@ -16,10 +16,7 @@ public class SysUser extends Human {
         this.role = role;
     }
 
-    @Id
-    @GeneratedValue
-    @NotNull
-    private Long id;
+
 
     @Column
     @NotNull
@@ -32,4 +29,6 @@ public class SysUser extends Human {
     public void setRole(SystemRole role) {
         this.role = role;
     }
+
+
 }

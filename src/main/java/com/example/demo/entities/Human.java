@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
+@Entity
 public class Human {
 
     public Human(){
@@ -17,6 +18,10 @@ public class Human {
         this.password = password;
     }
 
+    @Id
+    @GeneratedValue
+    @NotNull
+    private Long id;
 
 
     @Column
@@ -45,5 +50,13 @@ public class Human {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }
